@@ -28,6 +28,7 @@ c.LTIAuthenticator.consumers = {
     "6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6":"795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 }
 c.NotebookApp.allow_remote_access = True
+
 # LDAP
 #c.JupyterHub.authenticator_class = 'ldapauthenticator.LDAPAuthenticator'
 #c.LDAPAuthenticator.server_address = '10.124.56.4:389'

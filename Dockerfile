@@ -41,15 +41,6 @@ RUN pip install jupyter
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 
-# Install nbgrader
-RUN pip install SQLAlchemy==1.2.19 nbgrader nbconvert==5.4.1 && \
-    jupyter nbextension install --sys-prefix --py nbgrader --overwrite && \
-    jupyter nbextension enable --sys-prefix --py nbgrader && \
-    jupyter serverextension enable --sys-prefix --py nbgrader && \
-    jupyter nbextension disable --sys-prefix formgrader/main --section=tree && \
-    jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
-
-COPY nbgrader_config.py /home/$JH_ADMIN/.jupyter/nbgrader_config.py
 COPY jupyterhub_config.py /srv/jupyterhub/
 
 RUN mkdir -p /home/$JH_ADMIN/.jupyter && \
@@ -57,9 +48,6 @@ RUN mkdir -p /home/$JH_ADMIN/.jupyter && \
 COPY header.ipynb /home/$JH_ADMIN/source
 RUN chown -R $JH_ADMIN /home/$JH_ADMIN && \
     chmod 700 /home/$JH_ADMIN
-
-RUN mkdir -p /srv/nbgrader/exchange && \
-    chmod ugo+rw /srv/nbgrader/exchange
 
 RUN echo "$JH_ADMIN:$JH_PWD" | chpasswd
 
@@ -69,16 +57,10 @@ RUN groupadd admin && \
 
 # Paquets pip
 
-RUN pip install mobilechelonian \
-    nbconvert \
-    pandas \
+RUN pip install pandas \
     matplotlib  \
-    folium  \
-    geopy \
-    ipython-sql \
     metakernel \
     pillow \
-    nbautoeval \
     jupyterlab-server \
     jupyter_contrib_nbextensions 
 
@@ -95,12 +77,12 @@ RUN mkdir /srv/feedback && \
     chmod 4777 /srv/feedback
 
 # Creation des comptes
-COPY comptes.csv /root
-COPY import_comptes.sh /usr/bin
-COPY killJup.sh /usr/bin
-COPY checkmem.sh /usr/bin
-RUN chmod 755 /usr/bin/*.sh
-RUN /usr/bin/import_comptes.sh /root/comptes.csv
+#COPY comptes.csv /root
+#COPY import_comptes.sh /usr/bin
+#COPY killJup.sh /usr/bin
+#COPY checkmem.sh /usr/bin
+#RUN chmod 755 /usr/bin/*.sh
+#RUN /usr/bin/import_comptes.sh /root/comptes.csv
 
 
 EXPOSE 8000
