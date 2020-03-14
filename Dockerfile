@@ -70,7 +70,7 @@ RUN pip install jupyterhub-ltiauthenticator \
     tornado==5.1.1
 # Creation des exemples
 
-COPY --chown=1000 exemples /home/$JH_ADMIN/exemples
+#COPY --chown=1000 exemples /home/$JH_ADMIN/exemples
 
 # Dossier feedback
 RUN mkdir /srv/feedback && \
