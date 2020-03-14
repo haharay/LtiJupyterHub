@@ -1,52 +1,54 @@
-# Installation automatique de JupyterHub via docker
+# 通过Docker自动安装JupyterHub和LTI
 
-**JupyterHub** est un outil permettant d'ajouter une fonctionnalité multi-utilisateurs à Jupyter. nbgrader s'intègre à cette configuration afin de rendre automatique la soumission et la récupération des travaux. Il nécessite par contre l'utilisation dans le lycée d'un serveur hébergeant la solution. Disposer d'un tel outil permet d'éviter d'avoir à installer jupyter en local car un accès distant via le navigateur suffit.
+[ ] docker-compose 自动运行？
 
-**Docker** est un outil de virtualisation d'application léger et très performant. Il permet de bénéficier d'un environnement jupyterhub indépendant du reste du système.
+ JupyterHub 是用于向Jupyter添加多用户功能的工具。 nbgrader与此配置集成在一起，使作业的提交和检索自动进行。 但是，它要求在学校使用托管该解决方案的服务器。 拥有这样的工具可以避免必须在本地安装jupyter，因为通过浏览器进行远程访问就足够了。
 
-La procédure d'installation est la suivante :
-1. Récupérez le matériel nécessaire à la fabrication de l'image Docker
+** Docker **是一种轻便且功能强大的应用程序虚拟化工具。 它提供了独立于系统其余部分的jupyterhub环境。
+
+安装步骤如下：
+1. 收集制作Docker映像所需的材料
 ```console
 git clone https://github.com/haharay/LtiJUpyterhubDocker.git
 ```
-2. Installez docker sur votre machine. Sous linux, tapez simplement
+2. 在您的机器上安装docker。 在Linux中，只需键入
 ```console
 apt-get install docker.io
 ```
-docker.io est la version de docker packagée par debian/ubuntu. Si vous rencontrez des difficultés avec cette version, vous pouvez utiliser la version officielle docker-ce dont l'installation est décrite ici :
+docker.io是debian / ubuntu打包的docker版本。 如果您在使用此版本时遇到困难，则可以使用正式版docker-，此处描述了安装：
 
 https://www.digitalocean.com/community/tutorials/comment-installer-et-utiliser-docker-sur-ubuntu-18-04-fr
 
-Utiliser une ou l'autre de ces versions ne changera rien pour la suite.
+使用这些版本中的一个或另一个将不会对其余版本进行任何更改。
 
-3. Allez dans le dossier *jupyterhub* et construisez votre image Docker
+3. 转到* jupyterhub *文件夹并构建您的Docker映像
 ```console
 cd LtiJUpyterhubDocker
 docker build -t jhub_srv .
 ```
-N'oubliez pas le . à la fin de la seconde commande !
+别忘了 在第二个命令结束时的. ！
 
-4. Lancez votre image
+4. 启动镜像：
 ```console
 docker run -i -p8000:8090  jhub_srv
 ```
 
-Le serveur **jupyterhub** est à présent opérationnel. Ouvrez un navigateur et allez à l'adresse
-http://127.0.0.1:8000 (ou http://_votre_adresse_ip:8000 via le réseau). Vous pouvez commencer à tester un compte prof en utilisant les logins présents dans le fichier comptes.csv (par exemple prof1 / wawa)
+** jupyterhub **服务器现在可以运行。 打开浏览器并转到地址
+http://127.0.0.1:8000（或http：// _ your_ip_address：8000，通过网络）。 您可以使用accounts.csv文件中存在的登录名（例如，prof1 / wawa）开始测试教授帐户。
 
 ## LTI的设置
 
-LTI账户：
+在edx的高级设置中，需要添加LTI账户：
 
 "jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 
-
+然后，使用高级模块添加LTI组件或者是构造课件组件。
 
 ## 课程安排
 
 对Python for Finance的材料，每页提供要点提示（HTML部件）、notebook文档（LtiJUpyterhub）和视频讲解(iframe链接)。
 
-## Gérer la persistance des données
+## 管理持久数据
 Si vous mettez en place un serveur en production, vous voudrez que vos données survivent même si vous effacez le container pour en reconstruire un propre à partir d'une image. Les **volumes** docker sont vos amis ! Grâce à eux, vous pourrez externaliser le stockage de certains dossiers hors du container. Pour cette installation de jupyterhub, je recommande deux volumes 
 - un volume pour les espaces personnels de stockage (jh_home)
 - un volume pour la zone d'échange nbgrader (jh_exchange)
