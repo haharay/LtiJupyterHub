@@ -40,6 +40,12 @@ LTI账户：
 
 "jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 
+
+
+## 课程安排
+
+对Python for Finance的材料，每页提供要点提示（HTML部件）、notebook文档（LtiJUpyterhub）和视频讲解(iframe链接)。
+
 ## Gérer la persistance des données
 Si vous mettez en place un serveur en production, vous voudrez que vos données survivent même si vous effacez le container pour en reconstruire un propre à partir d'une image. Les **volumes** docker sont vos amis ! Grâce à eux, vous pourrez externaliser le stockage de certains dossiers hors du container. Pour cette installation de jupyterhub, je recommande deux volumes 
 - un volume pour les espaces personnels de stockage (jh_home)
