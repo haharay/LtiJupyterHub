@@ -7,7 +7,7 @@
 La procédure d'installation est la suivante :
 1. Récupérez le matériel nécessaire à la fabrication de l'image Docker
 ```console
-git clone https://github.com/wawachief/jupyterhubDocker.git
+git clone https://github.com/haharay/LtiJUpyterhubDocker.git
 ```
 2. Installez docker sur votre machine. Sous linux, tapez simplement
 ```console
@@ -21,7 +21,7 @@ Utiliser une ou l'autre de ces versions ne changera rien pour la suite.
 
 3. Allez dans le dossier *jupyterhub* et construisez votre image Docker
 ```console
-cd jupyterhubDocker
+cd LtiJUpyterhubDocker
 docker build -t jhub_srv .
 ```
 N'oubliez pas le . à la fin de la seconde commande !
