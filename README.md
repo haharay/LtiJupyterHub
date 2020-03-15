@@ -23,7 +23,7 @@ https://www.digitalocean.com/community/tutorials/comment-installer-et-utiliser-d
 
 3. 转到* jupyterhub *文件夹并构建您的Docker映像
 ```console
-cd LtiJUpyterhubDocker
+cd /Users/rayhe/Documents/python/edx/LtiJUpyterhubDocker
 docker build -t jhub_srv .
 ```
 别忘了 在第二个命令结束时的. ！
@@ -43,6 +43,18 @@ http://127.0.0.1:8000（或http：// _ your_ip_address：8000，通过网络）�
 "jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 
 然后，使用高级模块添加LTI组件或者是构造课件组件。
+
+
+
+```bash
+[
+    "jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698",
+    "HeLMS:e5709d5e400449c3a919ba9af6ca5b77:c7e970dff9b62c388726e1494bb1d3fa98fa2db1",
+    "github:507cb39f-ecfe-422b-9635-ae59984163ba:b2c7fb16-2c4c-4b92-b6ae-cd769d56fb7d"
+]
+```
+
+
 
 ## 课程安排
 

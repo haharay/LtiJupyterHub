@@ -61,8 +61,11 @@ RUN pip install pandas \
     matplotlib  \
     metakernel \
     pillow \
+    plotly \
+    cufflinks \
     jupyterlab-server \
-    jupyter_contrib_nbextensions 
+    jupyter_contrib_nbextensions \
+    nbgitpuller
 
 RUN jupyter contrib nbextension install --sys-prefix
 
