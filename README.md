@@ -30,7 +30,7 @@ docker build -t jhub_srv .
 
 4. 启动镜像：
 ```console
-docker run -i -p8000:8090  jhub_srv
+docker run -i -p8000:8000  jhub_srv
 ```
 
 ** jupyterhub **服务器现在可以运行。 打开浏览器并转到地址
