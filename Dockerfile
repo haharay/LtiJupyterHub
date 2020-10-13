@@ -40,7 +40,7 @@ ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
 # 安装R的基础部分
-ARG R_VERSION=4.0.3
+ARG R_VERSION=4.0.2
 ARG OS_IDENTIFIER=ubuntu-1804
 # Install R
 RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
