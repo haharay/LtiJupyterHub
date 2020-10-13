@@ -40,7 +40,7 @@ RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
-ARG R_VERSION=4.0.2
+ARG R_VERSION=4.0.3
 ARG OS_IDENTIFIER=ubuntu-1804
 # Install R
 RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
@@ -75,8 +75,8 @@ RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 # julia及相关程序包，来自https://github.com/docker-library/julia/blob/c5b96cfa3cc8dadf388a692efb280ee3c76951a3/1.4/buster/Dockerfile
 ENV JULIA_PATH /srv/julia
 ENV PATH $JULIA_PATH/bin:$PATH
-ENV JULIA_VERSION 1.5.0
-RUN	curl -fL -o julia.tar.gz  https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.0-linux-x86_64.tar.gz; 
+ENV JULIA_VERSION 1.5.2
+RUN	curl -fL -o julia.tar.gz  https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.2-linux-x86_64.tar.gz; 
 RUN	mkdir "$JULIA_PATH"; \
 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; \
 	rm julia.tar.gz; 
