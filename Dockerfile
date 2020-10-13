@@ -40,6 +40,7 @@ RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
+# 安装R的基础部分
 ARG R_VERSION=4.0.3
 ARG OS_IDENTIFIER=ubuntu-1804
 # Install R
@@ -51,10 +52,7 @@ RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.
     ln -s /opt/R/${R_VERSION}/lib/R /usr/lib/R && \
     rm r-${R_VERSION}_1_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
-#  install R packages
-RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+
 
 RUN pip install --upgrade pip
 RUN pip install pip -U
@@ -64,14 +62,16 @@ RUN pip install scipy \
     numpy \
     pandas \
     matplotlib \
-    tensorflow \
-    keras \
+    seaborn \
+    sympy \
     numba
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 
 COPY nbgrader_config.py /home/$JH_ADMIN/.jupyter/nbgrader_config.py
 COPY jupyterhub_config.py /srv/jupyterhub/
+COPY start_web.sh /srv/
+RUN  chmod 777 /srv/start_web.sh
 
 RUN chown -R $JH_ADMIN /home/$JH_ADMIN && \
     chmod 700 /home/$JH_ADMIN
@@ -83,12 +83,10 @@ RUN echo "$JH_ADMIN:$JH_PWD" | chpasswd
 RUN groupadd admin && \
     usermod -a -G admin $JH_ADMIN
 
-# Paquets pip
-
+# 安装大多数时候使用的包，以及用户目录下的包
 RUN pip install mobilechelonian \
     xgboost \
     nbconvert \
-    seaborn \
     folium  \
     geopy \
     ipython-sql \
@@ -109,15 +107,19 @@ RUN pip install statsmodels \
     arch \
     tushare \
     talib-binary \
+    julia \
     diffeqpy \
-    sympy \
     cufflinks \
     plotly \
     jieba \
     wordcloud
 
-# config R
+
+#  install R packages
 RUN R -e "IRkernel::installspec(user = FALSE)"
+RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install jupyterhub-ltiauthenticator \
