@@ -24,17 +24,14 @@ https://www.digitalocean.com/community/tutorials/comment-installer-et-utiliser-d
 3. 转到* jupyterhub *文件夹并构建您的Docker映像
 ```console
 cd /Users/rayhe/Documents/python/edx/LtiJUpyterhubDocker
-docker build -t jhub_srv .
+docker build -t jupyter_lti .
 ```
 别忘了 在第二个命令结束时的. ！
 
-4. 启动镜像：
+4. 启动镜像，把客户机的8000端口映射到主机的8090端口：
 ```console
-docker run -i -p8000:8000  jhub_srv
+docker run -i -p8090:8000  jupyter_lti
 ```
-
-** jupyterhub **服务器现在可以运行。 打开浏览器并转到地址
-http://127.0.0.1:8000（或http：// _ your_ip_address：8000，通过网络）。 您可以使用accounts.csv文件中存在的登录名（例如，prof1 / wawa）开始测试教授帐户。
 
 ## LTI的设置
 
@@ -60,7 +57,10 @@ http://127.0.0.1:8000（或http：// _ your_ip_address：8000，通过网络）�
 
 对Python for Finance的材料，每页提供要点提示（HTML部件）、notebook文档（LtiJUpyterhub）和视频讲解(iframe链接)。
 
-## 管理持久数据
+tainers
+```console
+docker ps -a
+```## 管理持久数据
 Si vous mettez en place un serveur en production, vous voudrez que vos données survivent même si vous effacez le container pour en reconstruire un propre à partir d'une image. Les **volumes** docker sont vos amis ! Grâce à eux, vous pourrez externaliser le stockage de certains dossiers hors du container. Pour cette installation de jupyterhub, je recommande deux volumes 
 - un volume pour les espaces personnels de stockage (jh_home)
 - un volume pour la zone d'échange nbgrader (jh_exchange)
@@ -101,10 +101,7 @@ Ces deux méthodes montrent donc comment transférer le contenu d'un container �
 docker start -i jupyterhub
 ```
 
-- Pour connaître la liste des containers
-```console
-docker ps -a
-```
+- Pour connaître la liste des con
 
 - Pour connaître la liste des images
 ```console
