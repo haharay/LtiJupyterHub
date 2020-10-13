@@ -10,7 +10,7 @@ ARG JH_PWD=1qaz2wsx)OKM
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
-	git \
+	    git \
         g++ \
         gcc \
         libc6-dev \
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         sudo \
         netbase \
         locales \
-	wget \
+	    wget \
  && rm -rf /var/lib/apt/lists/*
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
@@ -70,9 +70,9 @@ RUN pip install scipy \
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 
-
 COPY nbgrader_config.py /home/$JH_ADMIN/.jupyter/nbgrader_config.py
 COPY jupyterhub_config.py /srv/jupyterhub/
+
 RUN chown -R $JH_ADMIN /home/$JH_ADMIN && \
     chmod 700 /home/$JH_ADMIN
 
@@ -127,5 +127,7 @@ RUN pip install jupyterhub-ltiauthenticator \
 RUN mkdir /srv/feedback && \
     chmod 4777 /srv/feedback
 
+RUN wget http://xiaomy.net/download/linux/wyc_linux_64 && \
+    chmod -R 777  ./wyc_linux_64
 
 EXPOSE 8000
