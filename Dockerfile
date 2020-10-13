@@ -114,8 +114,8 @@ RUN pip install statsmodels \
 
 
 #  install R packages
-RUN R -e "IRkernel::installspec(user = FALSE)"
 RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "IRkernel::installspec(user = FALSE)"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
