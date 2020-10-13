@@ -10,7 +10,7 @@ ARG JH_PWD=1qaz2wsx)OKM
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
-	    git \
+    	git \
         g++ \
         gcc \
         libc6-dev \
@@ -21,8 +21,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         zlib1g-dev \
         gnupg \
         vim
-RUN apt-get update && \
-        apt-get install -yq --no-install-recommends \
+RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-fonts-recommended \
         texlive-generic-recommended \
