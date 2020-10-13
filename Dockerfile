@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-fonts-recommended \
-        texlive-generic-recommended \
         pandoc \
         sudo \
         netbase \
