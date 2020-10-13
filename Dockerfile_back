@@ -1,10 +1,10 @@
 FROM jupyterhub/jupyterhub
 
-LABEL maintainer="Ray <hechunming@qq.com>"
+LABEL maintainer="Ray <hechunming@scujcc.edu.cn>"
 
 USER root
 
-ARG JH_ADMIN=adminlti
+ARG JH_ADMIN=adminjh
 ARG JH_PWD=1qaz2wsx)OKM
 
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -50,11 +50,13 @@ RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.
     ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/bin/Rscript && \
     ln -s /opt/R/${R_VERSION}/lib/R /usr/lib/R && \
     rm r-${R_VERSION}_1_amd64.deb && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* 
 #  install R packages
 RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+
+    
 
 RUN pip install --upgrade pip
 RUN pip install pip -U
@@ -70,12 +72,37 @@ RUN pip install scipy \
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 
+# julia及相关程序包，来自https://github.com/docker-library/julia/blob/c5b96cfa3cc8dadf388a692efb280ee3c76951a3/1.4/buster/Dockerfile
+ENV JULIA_PATH /srv/julia
+ENV PATH $JULIA_PATH/bin:$PATH
+ENV JULIA_VERSION 1.5.2
+ARG JULIA_VERSION=1.5.2
+RUN	curl -fL -o julia.tar.gz  https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-${JULIA_VERSION}-linux-x86_64.tar.gz; 
+RUN	mkdir "$JULIA_PATH"; \
+	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; \
+	rm julia.tar.gz; 
+RUN julia -e 'using Pkg;Pkg.add("IJulia")'
+
+# Install nbgrader
+
+RUN pip install SQLAlchemy nbgrader nbconvert && \ 
+    jupyter nbextension install --sys-prefix --py nbgrader --overwrite && \
+    jupyter nbextension enable --sys-prefix --py nbgrader && \
+    jupyter serverextension enable --sys-prefix --py nbgrader && \
+    jupyter nbextension disable --sys-prefix formgrader/main --section=tree && \
+    jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
 
 COPY nbgrader_config.py /home/$JH_ADMIN/.jupyter/nbgrader_config.py
 COPY jupyterhub_config.py /srv/jupyterhub/
+
+RUN mkdir -p /home/$JH_ADMIN/.jupyter && \
+    mkdir /home/$JH_ADMIN/source
+COPY header.ipynb /home/$JH_ADMIN/source
 RUN chown -R $JH_ADMIN /home/$JH_ADMIN && \
     chmod 700 /home/$JH_ADMIN
 
+RUN mkdir -p /srv/nbgrader/exchange && \
+    chmod ugo+rw /srv/nbgrader/exchange
 
 RUN echo "$JH_ADMIN:$JH_PWD" | chpasswd
 
@@ -115,13 +142,16 @@ RUN pip install statsmodels \
     plotly \
     jieba \
     wordcloud
-
+   
 # config R
 RUN R -e "IRkernel::installspec(user = FALSE)"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install jupyterhub-ltiauthenticator \
     tornado==5.1.1
+
+# Creation des exemples
+#COPY --chown=1000 exemples /home/$JH_ADMIN/exemples
 
 # Dossier feedback
 RUN mkdir /srv/feedback && \
