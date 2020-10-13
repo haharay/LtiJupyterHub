@@ -1,4 +1,4 @@
-FROM jupyterhub/jupyterhub:latest
+FROM jupyterhub/jupyterhub:1.1
 
 LABEL maintainer="Ray <hechunming@qq.com>"
 
@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -yq --no-install-recommends \
+RUN apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-fonts-recommended \
         texlive-generic-recommended \
