@@ -21,8 +21,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         zlib1g-dev \
         gnupg \
         vim
-RUN add-apt-repository universe && \
-        apt-get update && \
+RUN apt-get update && \
         apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-fonts-recommended \
