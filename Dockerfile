@@ -148,21 +148,13 @@ RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')
 
 RUN pip install jupyterhub-ltiauthenticator \
     tornado==5.1.1
-# Creation des exemples
 
+# Creation des exemples
 #COPY --chown=1000 exemples /home/$JH_ADMIN/exemples
 
 # Dossier feedback
 RUN mkdir /srv/feedback && \
     chmod 4777 /srv/feedback
-
-# Creation des comptes
-#COPY comptes.csv /root
-#COPY import_comptes.sh /usr/bin
-#COPY killJup.sh /usr/bin
-#COPY checkmem.sh /usr/bin
-#RUN chmod 755 /usr/bin/*.sh
-#RUN /usr/bin/import_comptes.sh /root/comptes.csv
 
 
 EXPOSE 8000
