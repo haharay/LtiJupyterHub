@@ -53,7 +53,7 @@ RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.
     rm r-${R_VERSION}_1_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
 
-
+# 安装jupyter服务的基础组件。
 RUN pip install --upgrade pip
 RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
@@ -67,8 +67,6 @@ RUN pip install scipy \
     numba
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
-
-COPY nbgrader_config.py /home/$JH_ADMIN/.jupyter/nbgrader_config.py
 COPY jupyterhub_config.py /srv/jupyterhub/
 COPY start_web.sh /srv/
 RUN  chmod 777 /srv/start_web.sh
