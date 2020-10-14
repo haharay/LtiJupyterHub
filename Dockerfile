@@ -116,6 +116,6 @@ RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install jupyterhub-ltiauthenticator \
-    tornado==5.1.1
+    tornado
 
 EXPOSE 8000
