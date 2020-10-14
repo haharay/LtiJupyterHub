@@ -116,6 +116,6 @@ RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')
 
 RUN pip install nbgitpuller \
     tornado
-RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
+RUN pip install git+https://github.com/haharay/ltiauthenticator
 
 EXPOSE 8000
