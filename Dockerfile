@@ -79,7 +79,6 @@ RUN groupadd admin && \
 
 # 安装大多数时候使用的包，以及用户目录下的包
 RUN pip install mobilechelonian \
-    xgboost \
     nbconvert \
     folium  \
     geopy \
