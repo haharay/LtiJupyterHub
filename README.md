@@ -32,8 +32,8 @@ docker build -t jupyter_lti .
 
 4. 启动镜像，把客户机的8000端口映射到主机的8090端口，或者在镜像中启动代理服务命令：
 ```console
-docker run -i -p8090:8000  jupyter_lti
-docker run -i -p8090:8000  jupyter_lti  /srv/start_web.sh
+docker run -i -p 8000:8000  jupyter_lti
+docker run -d -p 8000:8000  jupyter_lti
 ```
 
 5. 在主机上，执行以下命令，建立lti.xiaomy.net代理：
@@ -45,7 +45,7 @@ nohup ./wyc_linux_64 -token=7ptm8xp0 &
 
 在edx的高级设置中，需要添加LTI账户：
 
-"jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
+"jupyter:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 
 然后，使用高级模块添加LTI组件或者是构造课件组件。
 
@@ -53,7 +53,7 @@ nohup ./wyc_linux_64 -token=7ptm8xp0 &
 
 ```bash
 [
-    "jupyter01:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698",
+    "jupyter:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698",
     "HeLMS:e5709d5e400449c3a919ba9af6ca5b77:c7e970dff9b62c388726e1494bb1d3fa98fa2db1",
     "github:507cb39f-ecfe-422b-9635-ae59984163ba:b2c7fb16-2c4c-4b92-b6ae-cd769d56fb7d"
 ]

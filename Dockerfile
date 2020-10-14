@@ -68,12 +68,8 @@ RUN pip install scipy \
 
 RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 COPY jupyterhub_config.py /srv/jupyterhub/
-COPY start_web.sh /srv/
-RUN  chmod 777 /srv/start_web.sh
-
 RUN chown -R $JH_ADMIN /home/$JH_ADMIN && \
     chmod 700 /home/$JH_ADMIN
-
 
 RUN echo "$JH_ADMIN:$JH_PWD" | chpasswd
 
@@ -116,18 +112,10 @@ RUN pip install statsmodels \
 #  install R packages
 RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "IRkernel::installspec(user = FALSE)"
-RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install jupyterhub-ltiauthenticator \
     tornado==5.1.1
-
-# Dossier feedback
-RUN mkdir /srv/feedback && \
-    chmod 4777 /srv/feedback
-
-RUN wget http://xiaomy.net/download/linux/wyc_linux_64 && \
-    chmod -R 777  ./wyc_linux_64
 
 EXPOSE 8000
