@@ -72,13 +72,16 @@ nohup ./wyc_linux_64 -token=7ptm8xp0 &
 
 ## 补充：数据持久化
 建立数据存储卷：
+```bash
 docker volume create jupyterhub_data
-
+```
 这样创建容器的命令就变成：
+```bash
 docker run -it --name jupyterhub -p 8599:8000 -v jupyterhub_data:/home jupyter_lti
-
-重新打开命名容器：
+```
+重新打开、stop命名容器：
+```bash
 docker start -i jupyterhub
-
+```
 ### 备份与恢复数据
 
