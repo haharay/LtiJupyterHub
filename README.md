@@ -33,7 +33,7 @@ docker build -t jupyter_lti .
 4. 启动镜像，把客户机的8000端口映射到主机的8090端口，或者在镜像中启动代理服务命令：
 ```console
 docker run -i -p 8599:8000  jupyter_lti
-docker run -d -p 8599:8000  jupyter_lti
+docker run -d -p 8599:8000  --name jupyterhub jupyter_lti
 ```
 5. 在主机上，执行以下命令，建立lti.xiaomy.net代理：
 ```console
@@ -68,4 +68,17 @@ nohup ./wyc_linux_64 -token=7ptm8xp0 &
 ## 课程安排
 
 对Python for Finance的材料，每页提供要点提示（HTML部件）、notebook文档（LtiJUpyterhub）和视频讲解(iframe链接)。
+
+
+## 补充：数据持久化
+建立数据存储卷：
+docker volume create jupyterhub_data
+
+这样创建容器的命令就变成：
+docker run -it --name jupyterhub -p 8599:8000 -v jupyterhub_data:/home jupyter_lti
+
+重新打开命名容器：
+docker start -i jupyterhub
+
+### 备份与恢复数据
 
