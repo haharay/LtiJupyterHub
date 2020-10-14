@@ -9,7 +9,7 @@ c.JupyterHub.tornado_settings = {
   }
 }
 # 修改认证器
-from jupyter_client.localinterfaces  import public_ips
+from jupyter_client.localinterfaces import public_ips
 c.JupyterHub.hub_ip = public_ips()[0]
 c.Authenticator.admin_users = {'adminlti'}
 c.Authenticator.delete_invalid_users = True
