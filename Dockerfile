@@ -116,7 +116,7 @@ RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install nbgitpuller \
-    tornado
+    tornado \
     jupyterhub-ltiauthenticator
 
 EXPOSE 8000
