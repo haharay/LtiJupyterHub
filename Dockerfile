@@ -103,6 +103,7 @@ RUN pip install statsmodels \
     talib-binary \
     julia \
     diffeqpy \
+    jitcsde \
     cufflinks \
     plotly \
     jieba \
@@ -110,10 +111,10 @@ RUN pip install statsmodels \
 
 
 #  install R packages
-#RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-#RUN R -e "IRkernel::installspec(user = FALSE)"
-#RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-#RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "IRkernel::installspec(user = FALSE)"
+RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('estudy2', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install nbgitpuller \
     tornado
