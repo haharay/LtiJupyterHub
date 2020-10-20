@@ -33,6 +33,7 @@ docker build -t jupyter_lti .
 4. 启动镜像，把客户机的8000端口映射到主机的8090端口，或者在镜像中启动代理服务命令：
 ```console
 docker run -i -p 8599:8000  jupyter_lti
+docker run -i -p 8599:8000  --name jupyterhub jupyter_lti
 docker run -d -p 8599:8000  --name jupyterhub jupyter_lti
 ```
 5. 在主机上，执行以下命令，建立lti.xiaomy.net代理：
