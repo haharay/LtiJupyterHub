@@ -99,6 +99,7 @@ RUN pip install statsmodels \
     linearmodels \
     arch \
     tushare \
+    pandas-datareader \
     talib-binary \
     julia \
     diffeqpy \
