@@ -99,10 +99,11 @@ RUN pip install statsmodels \
     linearmodels \
     arch \
     tushare \
-    pandas-datareader \
     talib-binary \
+    pandas-datareader \
     julia \
     diffeqpy \
+    jitcode \
     jitcsde \
     cufflinks \
     plotly \
