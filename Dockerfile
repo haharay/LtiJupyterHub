@@ -28,9 +28,10 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         sudo \
         netbase \
         locales \
-	    wget
-# texlive-generic-recommended \
+	    wget \
  && rm -rf /var/lib/apt/lists/*
+
+ # texlive-generic-recommended \
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
