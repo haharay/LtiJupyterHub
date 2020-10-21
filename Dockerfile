@@ -87,7 +87,6 @@ RUN pip install statsmodels \
     linearmodels \
     arch \
     tushare \
-    TA-Lib \
     pandas-datareader \
     julia \
     diffeqpy \
