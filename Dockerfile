@@ -24,12 +24,12 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-fonts-recommended \
-        texlive-generic-recommended \
         pandoc \
         sudo \
         netbase \
         locales \
-	    wget \
+	    wget
+# texlive-generic-recommended \
  && rm -rf /var/lib/apt/lists/*
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
