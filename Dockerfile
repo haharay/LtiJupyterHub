@@ -99,7 +99,7 @@ RUN pip install statsmodels \
 
 
 RUN pip install nbgitpuller \
-    tornado
+    tornado==5.1.1
 RUN pip install jupyterhub-ltiauthenticator
 
 EXPOSE 8000
