@@ -48,6 +48,8 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install --upgrade notebook
 
+COPY jupyterhub_config.py /srv/jupyterhub/
+
 RUN pip install nbgitpuller \
     tornado
 RUN pip install git+https://github.com/U4I-fedir-kryvytskyi/ltiauthenticator
