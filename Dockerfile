@@ -45,8 +45,8 @@ ENV LANG zh_CN.UTF-8
 RUN pip install --upgrade pip
 RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install jupyterlab
-RUN pip install notebook
+RUN npm install -g configurable-http-proxy
+RUN python3 -m pip install --upgrade notebook
 
 RUN pip install nbgitpuller \
     tornado
