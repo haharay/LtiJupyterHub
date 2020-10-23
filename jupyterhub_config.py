@@ -15,7 +15,7 @@ from jupyter_client.localinterfaces import public_ips
 c.JupyterHub.hub_ip = public_ips()[0]
 c.Authenticator.admin_users = {'adminlti'}
 c.Authenticator.delete_invalid_users = True
-c.JupyterHub.api_tokens = {
+c.JupyterHub.service_tokens = {
     'f05ebd3853894ecccfc8c8b4d139618a': 'adminlti',
 }
 c.JupyterHub.allow_named_servers = True

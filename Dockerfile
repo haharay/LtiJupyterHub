@@ -45,10 +45,48 @@ ENV LANG zh_CN.UTF-8
 RUN pip install --upgrade pip
 RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN npm install -g configurable-http-proxy
-RUN python3 -m pip install --upgrade notebook
+RUN pip install jupyterlab
+RUN pip install scipy \
+    numpy \
+    pandas \
+    matplotlib \
+    seaborn \
+    sympy \
+    numba
 
 COPY jupyterhub_config.py /srv/jupyterhub/
+
+# 安装大多数时候使用的包，以及用户目录下的包
+RUN pip install mobilechelonian \
+    nbconvert \
+    folium  \
+    geopy \
+    ipython-sql \
+    metakernel \
+    pillow \
+    nbautoeval \
+    jupyterlab-server \
+    jupyter_contrib_nbextensions \
+    RISE \
+    ipythontutor \
+    pytutor
+
+RUN jupyter contrib nbextension install --sys-prefix
+
+# 计量经济分析包
+RUN pip install statsmodels \
+    linearmodels \
+    arch \
+    tushare \
+    pandas-datareader \
+    julia \
+    diffeqpy \
+    jitcode \
+    jitcsde \
+    cufflinks \
+    plotly \
+    jieba \
+    wordcloud
 
 RUN pip install nbgitpuller \
     tornado
