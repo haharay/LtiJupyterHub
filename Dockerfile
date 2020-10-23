@@ -66,12 +66,9 @@ RUN pip install mobilechelonian \
     pillow \
     nbautoeval \
     jupyterlab-server \
-    jupyter_contrib_nbextensions \
     RISE \
     ipythontutor \
     pytutor
-
-RUN jupyter contrib nbextension install --sys-prefix
 
 # 计量经济分析包
 RUN pip install statsmodels \
