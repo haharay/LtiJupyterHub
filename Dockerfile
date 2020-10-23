@@ -41,11 +41,13 @@ RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
+COPY jupyterhub_config.py /srv/jupyterhub/
+
 # 安装jupyter服务的基础组件。
 RUN pip install --upgrade pip
 RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install -U jupyterlab
+RUN pip install -U notebook
 RUN pip install scipy \
     numpy \
     pandas \
@@ -54,7 +56,7 @@ RUN pip install scipy \
     sympy \
     numba
 
-COPY jupyterhub_config.py /srv/jupyterhub/
+
 
 
 
