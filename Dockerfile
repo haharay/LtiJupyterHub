@@ -41,8 +41,6 @@ RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
-COPY jupyterhub_config.py /srv/jupyterhub/
-
 # 安装jupyter服务的基础组件。
 RUN pip install --upgrade pip
 RUN pip install pip -U
@@ -50,7 +48,7 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install --upgrade notebook
 
-
+COPY jupyterhub_config.py /srv/jupyterhub/
 
 
 RUN pip install nbgitpuller \
