@@ -47,7 +47,8 @@ COPY jupyterhub_config.py /srv/jupyterhub/
 RUN pip install --upgrade pip
 RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install -U notebook
+RUN npm install -g configurable-http-proxy
+RUN python3 -m pip install --upgrade notebook
 RUN pip install scipy \
     numpy \
     pandas \
