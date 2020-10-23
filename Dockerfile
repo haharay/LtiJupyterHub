@@ -41,6 +41,8 @@ RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
+COPY jupyterhub_config.py /srv/jupyterhub/
+
 # 安装jupyter服务的基础组件。
 RUN pip install --upgrade pip
 RUN pip install pip -U
@@ -48,8 +50,41 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install --upgrade notebook
 
-COPY jupyterhub_config.py /srv/jupyterhub/
+RUN pip install scipy \
+    numpy \
+    pandas \
+    matplotlib \
+    seaborn \
+    sympy \
+    numba
 
+RUN pip install mobilechelonian \
+    nbconvert \
+    folium  \
+    geopy \
+    ipython-sql \
+    metakernel \
+    pillow \
+    nbautoeval \
+    jupyterlab-server \
+    RISE \
+    ipythontutor \
+    pytutor
+
+# 计量经济分析包
+RUN pip install statsmodels \
+    linearmodels \
+    arch \
+    tushare \
+    pandas-datareader \
+    julia \
+    diffeqpy \
+    jitcode \
+    jitcsde \
+    cufflinks \
+    plotly \
+    jieba \
+    wordcloud
 
 RUN pip install nbgitpuller \
     tornado
