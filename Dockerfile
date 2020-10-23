@@ -4,9 +4,6 @@ LABEL maintainer="Ray <hechunming@qq.com>"
 
 USER root
 
-ARG JH_ADMIN=adminlti
-ARG JH_PWD=1qaz2wsx)OKM
-
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
