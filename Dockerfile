@@ -1,4 +1,4 @@
-FROM jupyterhub/jupyterhub:1.1
+FROM jupyterhub/jupyterhub:latest
 
 LABEL maintainer="Ray <hechunming@qq.com>"
 
@@ -100,6 +100,6 @@ RUN pip install statsmodels \
 
 RUN pip install nbgitpuller \
     tornado==5.1.1
-RUN pip install jupyterhub-ltiauthenticator
+RUN pip install git+https://github.com/U4I-fedir-kryvytskyi/ltiauthenticator
 
 EXPOSE 8000
