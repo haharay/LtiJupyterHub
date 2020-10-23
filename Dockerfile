@@ -49,14 +49,6 @@ RUN pip install pip -U
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install --upgrade notebook
-RUN pip install scipy \
-    numpy \
-    pandas \
-    matplotlib \
-    seaborn \
-    sympy \
-    numba
-
 
 
 
