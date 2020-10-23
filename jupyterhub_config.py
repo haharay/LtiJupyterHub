@@ -29,3 +29,12 @@ c.LTIAuthenticator.consumers = {
     "6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6":"795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 }
 c.NotebookApp.allow_remote_access = True
+
+def pre_spawn_hook(spawner):
+    username = spawner.user.name
+    try:
+        pwd.getpwnam(username)
+    except KeyError:
+        subprocess.check_call(['useradd', '-ms', '/bin/bash', username])
+
+c.Spawner.pre_spawn_hook = pre_spawn_hook
