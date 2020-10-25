@@ -83,7 +83,9 @@ RUN pip install statsmodels \
     jieba \
     wordcloud
 
-RUN pip install cryptography
+# 加密与信息安全相关工具
+RUN pip install cryptography \
+    pynacl
 
 
 RUN pip install nbgitpuller \
