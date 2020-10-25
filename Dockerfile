@@ -85,7 +85,8 @@ RUN pip install statsmodels \
 
 # 加密与信息安全相关工具
 RUN pip install cryptography \
-    pynacl
+    pynacl \
+    scikit-learn
 
 
 RUN pip install nbgitpuller \
