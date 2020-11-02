@@ -53,6 +53,7 @@ RUN python3 -m pip install --upgrade notebook
 RUN pip install scipy \
     numpy \
     pandas \
+    pandas-datareader \
     matplotlib \
     seaborn \
     sympy \
@@ -77,7 +78,6 @@ RUN pip install statsmodels \
     linearmodels \
     arch \
     tushare \
-    pandas-datareader \
     julia \
     diffeqpy \
     jitcode \
