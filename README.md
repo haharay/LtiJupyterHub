@@ -25,7 +25,7 @@ https://www.digitalocean.com/community/tutorials/comment-installer-et-utiliser-d
 
 3. 转到* jupyterhub *文件夹并构建您的Docker映像
 ```console
-cd /Users/rayhe/Documents/python/edx/LtiJUpyterhubDocker
+cd LtiJupyterHub
 docker build -t jupyter_lti .
 ```
 别忘了 在第二个命令结束时的. ！
@@ -76,6 +76,7 @@ ps -ef | grep wyc_linux_64
 建立数据存储卷：
 ```bash
 docker volume create jupyterhub_data
+docker volume rm jupyterhub_data
 ```
 这样创建容器的命令就变成：
 ```bash
