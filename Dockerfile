@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         netbase \
         locales \
 	    wget \
+	    john \
+        hashcat \
+        pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
  # texlive-generic-recommended \
@@ -53,7 +56,8 @@ RUN pip install scipy \
     matplotlib \
     seaborn \
     sympy \
-    numba
+    numba \
+    scikit-learn
 
 RUN pip install mobilechelonian \
     nbconvert \
@@ -84,13 +88,8 @@ RUN pip install statsmodels \
     wordcloud
 
 # 加密与信息安全相关工具
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-    john \
-    hashcat \
-    pdfcrack
 RUN pip install cryptography \
     pynacl \
-    scikit-learn
 
 RUN pip install nbgitpuller \
     tornado
