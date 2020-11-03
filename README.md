@@ -88,5 +88,5 @@ docker start -i jupyterhub
 ```
 ### 备份与恢复数据
 
-去掉：texlive-generic-recommended \
+去掉：texlive-generic-recommended \, john,hashcrack(安装麻烦)
 
