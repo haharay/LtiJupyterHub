@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         netbase \
         locales \
 	    wget \
-	    john \
         pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
