@@ -26,6 +26,7 @@ https://www.digitalocean.com/community/tutorials/comment-installer-et-utiliser-d
 3. 转到* jupyterhub *文件夹并构建您的Docker映像
 ```console
 cd LtiJupyterHub
+git pull origin master
 docker build -t jupyter_lti .
 ```
 别忘了 在第二个命令结束时的. ！
