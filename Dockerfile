@@ -93,6 +93,6 @@ RUN pip install cryptography \
 
 RUN pip install nbgitpuller \
     tornado
-RUN pip install git+https://github.com/U4I-fedir-kryvytskyi/ltiauthenticator
+RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
 
 EXPOSE 8000
