@@ -88,10 +88,10 @@ RUN pip install statsmodels \
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
     pynacl \
-    rsa \
     tensorflow
 
-RUN pip install nbgitpuller \
+RUN pip install rsa \
+    nbgitpuller \
     tornado
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
 
