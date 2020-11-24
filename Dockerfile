@@ -57,7 +57,8 @@ RUN pip install scipy \
     sympy \
     numba \
     scikit-learn \
-    patsy
+    patsy \
+    dask
 
 RUN pip install mobilechelonian \
     nbconvert \
