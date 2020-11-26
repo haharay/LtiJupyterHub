@@ -74,6 +74,9 @@ RUN pip install mobilechelonian \
     ipythontutor \
     pytutor
 
+# 大概320M，安装有难度
+RUN pip install  tensorflow
+
 # 计量经济分析包
 RUN pip install statsmodels \
     linearmodels \
@@ -92,8 +95,6 @@ RUN pip install statsmodels \
 RUN pip install cryptography \
     pynacl \
     rsa
-
-RUN pip install  tensorflow
 
 RUN pip install  nbgitpuller \
     tornado
