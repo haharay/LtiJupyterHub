@@ -59,7 +59,8 @@ RUN pip install scipy \
     scikit-learn \
     patsy \
     dask \
-    pyspark
+    pyspark \
+    py2neo
 
 RUN pip install mobilechelonian \
     nbconvert \
