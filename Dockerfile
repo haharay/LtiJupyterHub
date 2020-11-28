@@ -60,6 +60,7 @@ RUN pip install scipy \
     patsy \
     dask \
     pyspark \
+    jieba \
     py2neo
 
 RUN pip install mobilechelonian \
@@ -89,7 +90,6 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     plotly \
-    jieba \
     wordcloud
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
