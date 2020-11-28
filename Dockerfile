@@ -60,6 +60,7 @@ RUN pip install scipy \
     patsy \
     dask \
     pyspark \
+    nltk \
     jieba \
     py2neo
 
