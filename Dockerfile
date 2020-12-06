@@ -41,7 +41,7 @@ ENV LANG zh_CN.UTF-8
 
 # 安装R程序包
 ARG R_VERSION=4.0.3
-ARG OS_IDENTIFIER=ubuntu-1804
+ARG OS_IDENTIFIER=ubuntu-2104
 # Install R
 RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
     apt-get update -qq && \
