@@ -84,6 +84,7 @@ RUN pip install  tensorflow
 RUN pip install statsmodels \
     linearmodels \
     arch \
+    factor_analyzer \
     tushare \
     julia \
     diffeqpy \
