@@ -73,7 +73,7 @@ RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$
         && tar xf julia-$JULIA_VER-linux-x86_64.tar.gz --directory /usr/local/julia --strip-components=1 \
         && ln -s /usr/local/julia/bin/julia /usr/local/bin/julia \
         && rm -f julia-$JULIA_VER-linux-x86_64.tar.gz
-ENV JULIA_PKGDIR /usr/local/julia/share/julia/site
+ENV JULIA_PKGDIR /usr/share/julia/packages
 # install IJulia
 ENV JUPYTER=/usr/local/bin/jupyter
 RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("IJulia")' \
@@ -113,8 +113,8 @@ RUN pip install mobilechelonian \
     pytutor
 
 # 大概320M，安装有难度
-#RUN pip install  tensorflow
-#RUN pip install pyspark
+RUN pip install  tensorflow
+RUN pip install pyspark
 
 # 计量经济分析包
 RUN pip install statsmodels \
