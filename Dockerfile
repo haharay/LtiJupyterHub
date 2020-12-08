@@ -7,7 +7,9 @@ USER root
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
-    	git \
+    	git
+
+RUN apt-get update && apt-get install -yq --no-install-recommends \
         g++ \
         fonts-dejavu \
         gfortran \
@@ -61,7 +63,6 @@ RUN pip install scipy \
     scikit-learn \
     patsy \
     dask \
-    pyspark \
     nltk \
     jieba \
     py2neo
@@ -149,6 +150,8 @@ RUN pip install mobilechelonian \
 
 # 大概320M，安装有难度
 RUN pip install  tensorflow
+
+RUN pip install pyspark
 
 # 计量经济分析包
 RUN pip install statsmodels \
