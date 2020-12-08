@@ -7,10 +7,10 @@ USER root
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
-    	git
-
-RUN apt-get update && apt-get install -yq --no-install-recommends \
+        wget \
         g++ \
+    	git
+RUN apt-get update && apt-get install -yq --no-install-recommends \
         fonts-dejavu \
         gfortran \
         gcc \
@@ -29,7 +29,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         sudo \
         netbase \
         locales \
-	    wget \
         pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
@@ -109,13 +108,13 @@ RUN conda install --quiet --yes \
     'r-rsqlite=2.2*' \
     'r-shiny=1.5*' \
     'r-tidyverse=1.3*' \
+    'r-devtools=2.3*' \
     'rpy2=3.3*' && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
 #  install R packages
-RUN R -e "install.packages('devtools', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 # Add Julia packages. Only add HDF5 if this is not a test-only build since
