@@ -75,8 +75,8 @@ RUN useradd $JH_ADMIN --create-home --shell /bin/bash
 # julia及相关程序包，来自https://github.com/docker-library/julia/blob/c5b96cfa3cc8dadf388a692efb280ee3c76951a3/1.4/buster/Dockerfile
 ENV JULIA_PATH /srv/julia
 ENV PATH $JULIA_PATH/bin:$PATH
-ENV JULIA_VERSION 1.5.2
-ARG JULIA_VERSION=1.5.2
+ENV JULIA_VERSION 1.5.3
+ARG JULIA_VERSION=1.5.3
 RUN	curl -fL -o julia.tar.gz  https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-${JULIA_VERSION}-linux-x86_64.tar.gz; 
 RUN	mkdir "$JULIA_PATH"; \
 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; \
