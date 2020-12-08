@@ -49,6 +49,22 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install notebook
 
+
+ARG R_VERSION=4.0.3
+ARG OS_IDENTIFIER=ubuntu-2004
+# Install R
+RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
+    apt-get update -qq && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -f -y ./r-${R_VERSION}_1_amd64.deb && \
+    ln -s /opt/R/${R_VERSION}/bin/R /usr/bin/R && \
+    ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/bin/Rscript && \
+    ln -s /opt/R/${R_VERSION}/lib/R /usr/lib/R && \
+    rm r-${R_VERSION}_1_amd64.deb && \
+    rm -rf /var/lib/apt/lists/*
+RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "IRkernel::installspec(user = FALSE)"
+
+
 ENV JULIA_VER_MAJ 1.5
 ENV JULIA_VER_MIN .3
 ENV JULIA_VER $JULIA_VER_MAJ$JULIA_VER_MIN
@@ -64,20 +80,6 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
     && chmod -R +rx /usr/share/julia/ \
     && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
-
-ARG R_VERSION=4.0.3
-ARG OS_IDENTIFIER=ubuntu-2004
-# Install R
-RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
-    apt-get update -qq && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -f -y ./r-${R_VERSION}_1_amd64.deb && \
-    ln -s /opt/R/${R_VERSION}/bin/R /usr/bin/R && \
-    ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/bin/Rscript && \
-    ln -s /opt/R/${R_VERSION}/lib/R /usr/lib/R && \
-    rm r-${R_VERSION}_1_amd64.deb && \
-    rm -rf /var/lib/apt/lists/*
-RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-RUN R -e "IRkernel::installspec(user = FALSE)"
 
 RUN pip install scipy \
     numpy \
@@ -111,8 +113,8 @@ RUN pip install mobilechelonian \
     pytutor
 
 # 大概320M，安装有难度
-RUN pip install  tensorflow
-RUN pip install pyspark
+#RUN pip install  tensorflow
+#RUN pip install pyspark
 
 # 计量经济分析包
 RUN pip install statsmodels \
