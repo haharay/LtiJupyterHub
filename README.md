@@ -91,3 +91,7 @@ docker start -i jupyterhub
 
 去掉：texlive-generic-recommended \, john,hashcrack(安装麻烦)
 
+## Julia和R的参考更新网址：
+https://github.com/jupyter/docker-stacks
+https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
+
