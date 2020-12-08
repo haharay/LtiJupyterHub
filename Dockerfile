@@ -96,9 +96,6 @@ RUN pip install scipy \
     jieba \
     py2neo
 
-#  install R packages
-RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-
 RUN pip install mobilechelonian \
     nbconvert \
     folium  \
@@ -129,6 +126,10 @@ RUN pip install statsmodels \
     cufflinks \
     plotly \
     wordcloud
+
+#  install R packages
+RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
