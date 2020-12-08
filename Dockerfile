@@ -121,6 +121,10 @@ RUN pip install cryptography \
     pynacl \
     rsa
 
+#  设置IRkernel，安装其它R packages
+RUN R -e "IRkernel::installspec(user = FALSE)"
+RUN R -e "install.packages('devtools', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+
 RUN pip install  nbgitpuller \
     tornado
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
