@@ -134,7 +134,8 @@ RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
     pynacl \
-    rsa
+    rsa \
+    pycryptodomex
 
 RUN pip install  nbgitpuller \
     tornado
