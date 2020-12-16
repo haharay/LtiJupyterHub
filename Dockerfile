@@ -139,8 +139,9 @@ RUN pip install cryptography \
 
 RUN pip install  nbgitpuller \
     tornado \
-    keras \
-    nbconvert[webpdf]
+    keras
+RUN python3 -m pip install notebook-as-pdf
+RUN pyppeteer-install
 
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
 
