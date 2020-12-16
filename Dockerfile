@@ -142,7 +142,9 @@ RUN pip install  nbgitpuller \
     keras
 
 RUN pip install --upgrade jupyter
+RUN pip install --upgrade notebook-as-pdf
 RUN pip install  -U  nbconvert[webpdf]
+RUN pyppeteer-install
 
 
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
