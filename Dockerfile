@@ -139,8 +139,9 @@ RUN pip install cryptography \
 
 RUN pip install  nbgitpuller \
     tornado \
-    keras \
-    nbconvert[webpdf] --allow-chromium-download
+    keras
+
+RUN pip install  -U  nbconvert[webpdf]
 
 
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
