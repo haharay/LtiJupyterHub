@@ -138,7 +138,10 @@ RUN pip install cryptography \
     pycryptodomex
 
 RUN pip install  nbgitpuller \
-    tornado
+    tornado \
+    keras \
+    nbconvert[webpdf]
+
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
 
 EXPOSE 8000
