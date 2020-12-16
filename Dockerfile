@@ -141,6 +141,7 @@ RUN pip install  nbgitpuller \
     tornado \
     keras
 
+RUN pip install --upgrade jupyter
 RUN pip install  -U  nbconvert[webpdf]
 
 
