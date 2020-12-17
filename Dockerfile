@@ -92,6 +92,7 @@ RUN pip install scipy \
     scikit-learn \
     patsy \
     dask \
+    tables \
     nltk \
     jieba \
     py2neo
