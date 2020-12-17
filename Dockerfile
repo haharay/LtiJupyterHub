@@ -126,7 +126,8 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     plotly \
-    wordcloud
+    wordcloud \
+    keras
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
@@ -139,12 +140,9 @@ RUN pip install cryptography \
     pycryptodomex
 
 RUN pip install  nbgitpuller \
-    tornado \
-    keras
+    tornado
 
 RUN pip install  -U  nbconvert[webpdf]
-
-
 
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
 
