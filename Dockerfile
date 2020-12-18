@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         vim
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
+        texlive-latex-extra \
+        texlive-extra-utils \
+        texlive-luatex  \
         texlive-fonts-recommended \
         pandoc \
         sudo \
@@ -91,6 +94,7 @@ RUN pip install scipy \
     numba \
     scikit-learn \
     patsy \
+    tsfresh \
     dask \
     tables \
     nltk \
