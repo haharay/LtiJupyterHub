@@ -92,6 +92,7 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
 RUN pip install scipy \
     numpy \
     pandas \
+    tsfresh \
     pandas-datareader \
     matplotlib \
     seaborn \
