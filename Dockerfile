@@ -33,7 +33,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         sudo \
         netbase \
         locales \
-        pdfcrack \
+        libhdf5-dev \
+        pdfcrack
  && rm -rf /var/lib/apt/lists/*
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
@@ -99,6 +100,7 @@ RUN pip install scipy \
     scikit-learn \
     patsy \
     dask \
+    cython \
     tables \
     nltk \
     jieba \
