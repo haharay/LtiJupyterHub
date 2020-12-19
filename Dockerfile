@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         libc6-dev \
         libffi-dev \
         libgmp-dev \
+        libhdf5-dev \
         make \
         xz-utils \
         zlib1g-dev \
@@ -33,8 +34,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         sudo \
         netbase \
         locales \
-        libhdf5-dev \
-        pdfcrack
+        pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
