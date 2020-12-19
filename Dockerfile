@@ -103,6 +103,7 @@ RUN pip install scipy \
     dask \
     cython \
     tables \
+    tstables  \
     nltk \
     jieba \
     py2neo
