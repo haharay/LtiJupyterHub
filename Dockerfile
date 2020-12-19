@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-latex-extra \
         texlive-extra-utils \
-        texlive-luatex  \
+        texlive-generic-recommended  \
         texlive-fonts-recommended \
         pandoc \
         sudo \
@@ -94,7 +94,6 @@ RUN pip install scipy \
     numba \
     scikit-learn \
     patsy \
-    tsfresh \
     dask \
     tables \
     nltk \
