@@ -22,6 +22,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         zlib1g-dev \
         gnupg \
         vim
+
+RUN apt policy texlive-generic-recommended
+
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-latex-extra \
@@ -35,7 +38,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
-RUN apt policy texlive-generic-recommended
+
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
