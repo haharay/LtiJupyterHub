@@ -23,7 +23,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         zlib1g-dev \
         gnupg \
         vim
-
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         texlive-xetex \
         texlive-latex-extra \
