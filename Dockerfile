@@ -83,6 +83,10 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
     && chmod -R +rx /usr/share/julia/ \
     && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
 
 RUN pip install scipy \
     numpy \
