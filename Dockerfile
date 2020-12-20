@@ -36,6 +36,10 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         pdfcrack \
  && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+        default-jdk \
+ && rm -rf /var/lib/apt/lists/*
+
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
     && update-locale LANG=zh_CN.UTF-8 \
