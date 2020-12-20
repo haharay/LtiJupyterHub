@@ -141,7 +141,19 @@ RUN pip install statsmodels \
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-
+RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DataDrivenDiffEq")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DifferentialEquations")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DiffEqFlux")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
