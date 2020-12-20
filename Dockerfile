@@ -141,6 +141,8 @@ RUN pip install statsmodels \
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('matchingR', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN R -e "install.packages('rJava',,'http://rforge.net')"
 RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DataDrivenDiffEq")' \
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
@@ -159,7 +161,8 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
 RUN pip install cryptography \
     pynacl \
     rsa \
-    pycryptodomex
+    pycryptodomex \
+    matching
 
 RUN pip install  nbgitpuller \
     tornado
