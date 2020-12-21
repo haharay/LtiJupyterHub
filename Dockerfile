@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -yq --no-install-recommends \
-        default-jdk \
+        default-jre \
  && rm -rf /var/lib/apt/lists/*
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
