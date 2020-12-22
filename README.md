@@ -74,10 +74,16 @@ ps -ef | grep wyc_linux_64
 
 
 ## 补充：数据持久化
+删除当前的jupyterhub实例。
+```bash
+docker stop jupyterhub
+docker rm jupyterhub
+```
 建立数据存储卷：
 ```bash
-docker volume create jupyterhub_data
 docker volume rm jupyterhub_data
+docker volume create jupyterhub_data
+
 ```
 这样创建容器的命令就变成：
 ```bash
