@@ -170,7 +170,7 @@ RUN pip install cryptography \
 
 RUN pip install  nbgitpuller \
     tornado
-
+RUN R -e "install.packages('rJava',,'http://rforge.net')"
 RUN pip install  -U  nbconvert[webpdf]
 
 RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
