@@ -98,9 +98,6 @@ RUN pip install scipy \
     pandas \
     tsfresh \
     pandas-datareader \
-    matplotlib \
-    chineseize-matplotlib \
-    seaborn \
     sympy \
     numba \
     scikit-learn \
@@ -112,6 +109,12 @@ RUN pip install scipy \
     nltk \
     jieba \
     py2neo
+
+RUN pip install matplotlib \
+    chineseize-matplotlib \
+    seaborn \
+    plotly \
+    panel
 
 RUN pip install mobilechelonian \
     nbconvert \
@@ -141,9 +144,9 @@ RUN pip install statsmodels \
     jitcode \
     jitcsde \
     cufflinks \
-    plotly \
     wordcloud \
-    keras
+    keras  \
+    pyqlib
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
