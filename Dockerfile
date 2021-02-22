@@ -99,6 +99,7 @@ RUN pip install scipy \
     tsfresh \
     pandas-datareader \
     matplotlib \
+    chineseize-matplotlib \
     seaborn \
     sympy \
     numba \
