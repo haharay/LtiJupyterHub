@@ -1,4 +1,4 @@
-FROM jupyterhub/jupyterhub:1.2.2
+FROM jupyterhub/jupyterhub
 
 LABEL maintainer="Ray <hechunming@qq.com>"
 
