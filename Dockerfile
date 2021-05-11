@@ -58,7 +58,7 @@ RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install notebook
 
 
-ARG R_VERSION=4.0.3
+ARG R_VERSION=4.0.5
 ARG OS_IDENTIFIER=ubuntu-2004
 # Install R
 RUN wget https://cdn.rstudio.com/r/${OS_IDENTIFIER}/pkgs/r-${R_VERSION}_1_amd64.deb && \
@@ -73,8 +73,8 @@ RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "IRkernel::installspec(user = FALSE)"
 
 
-ENV JULIA_VER_MAJ 1.5
-ENV JULIA_VER_MIN .3
+ENV JULIA_VER_MAJ 1.6
+ENV JULIA_VER_MIN .1
 ENV JULIA_VER $JULIA_VER_MAJ$JULIA_VER_MIN
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$JULIA_VER-linux-x86_64.tar.gz \
         && mkdir /usr/local/julia \
@@ -129,9 +129,10 @@ RUN pip install mobilechelonian \
     ipythontutor \
     pytutor
 
-# 大概320M，安装有难度
-RUN pip install  tensorflow
-RUN pip install pyspark
+# 机器学习简化包，很好用
+RUN pip install pycaret \
+    pyspark \
+    jupyter-book
 
 # 计量经济分析包
 RUN pip install statsmodels \
@@ -145,8 +146,11 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     wordcloud \
-    keras  \
     pyqlib
+
+# 计量结果导出
+RUN pip install git+https://github.com/mwburke/stargazer.git
+
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
