@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="去掉pyqlib，安装问题。2">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="去掉pyqlib，安装问题。5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="1595000" />
+      <workItem from="1620947504320" duration="2225000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -156,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620948882101</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="去掉pyqlib，安装问题。2">
+      <created>1620949104166</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620949104166</updated>
+    </task>
+    <task id="LOCAL-00018" summary="去掉pyqlib，安装问题。5">
+      <created>1620949275504</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620949275504</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +197,7 @@
     <MESSAGE value="去掉pyqlib，安装问题" />
     <MESSAGE value="去掉pyqlib，安装问题。" />
     <MESSAGE value="去掉pyqlib，安装问题。2" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉pyqlib，安装问题。2" />
+    <MESSAGE value="去掉pyqlib，安装问题。5" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉pyqlib，安装问题。5" />
   </component>
 </project>
