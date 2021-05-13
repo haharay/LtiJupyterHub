@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="去掉pyqlib，安装问题。5">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="bottleneck errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
@@ -43,7 +43,7 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="2225000" />
+      <workItem from="1620947504320" duration="2352000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -171,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620949275504</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bottleneck errors">
+      <created>1620949799218</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620949799218</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +205,7 @@
     <MESSAGE value="去掉pyqlib，安装问题。" />
     <MESSAGE value="去掉pyqlib，安装问题。2" />
     <MESSAGE value="去掉pyqlib，安装问题。5" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉pyqlib，安装问题。5" />
+    <MESSAGE value="bottleneck errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="bottleneck errors" />
   </component>
 </project>
