@@ -11,7 +11,7 @@
 安装步骤如下：
 1. 收集制作Docker映像所需的材料
 ```console
-git clone https://github.com/haharay/LtiJUpyterhubDocker.git
+git clone https://github.com/haharay/LtiJupyterhub.git
 ```
 2. 在主机上安装docker。 在Linux中，只需键入
 ```console
