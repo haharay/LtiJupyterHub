@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="pycaret">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="更新julia包的安装">
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
       <workItem from="1614661011341" duration="600000" />
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
-      <workItem from="1620912867848" duration="2973000" />
+      <workItem from="1620912867848" duration="3190000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -100,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620947166764</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="更新julia包的安装">
+      <created>1620947253885</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1620947253885</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +128,7 @@
     <MESSAGE value="stargazer用于线性回归结果导出。" />
     <MESSAGE value="不使用1.2.2版本，使用最新版本试试。" />
     <MESSAGE value="pycaret" />
-    <option name="LAST_COMMIT_MESSAGE" value="pycaret" />
+    <MESSAGE value="更新julia包的安装" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新julia包的安装" />
   </component>
 </project>

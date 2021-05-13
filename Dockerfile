@@ -146,6 +146,7 @@ RUN pip install pycaret \
     pyspark \
     jupyter-book
 
+
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('matchingR', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
