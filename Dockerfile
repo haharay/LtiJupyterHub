@@ -135,8 +135,7 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     wordcloud \
-    matching \
-    pyqlib
+    matching
 
 # 计量结果导出
 RUN pip install git+https://github.com/mwburke/stargazer.git
