@@ -73,8 +73,8 @@ RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "IRkernel::installspec(user = FALSE)"
 
 
-ENV JULIA_VER_MAJ 1.6
-ENV JULIA_VER_MIN .1
+ENV JULIA_VER_MAJ 1.5
+ENV JULIA_VER_MIN .4
 ENV JULIA_VER $JULIA_VER_MAJ$JULIA_VER_MIN
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$JULIA_VER-linux-x86_64.tar.gz \
         && mkdir /usr/local/julia \
@@ -84,14 +84,15 @@ RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$
 ENV JULIA_PKGDIR /usr/share/julia/packages
 # install IJulia
 ENV JUPYTER=/usr/local/bin/jupyter
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("PyCall")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
 RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("IJulia")' \
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
     && chmod -R +rx /usr/share/julia/ \
     && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")' \
-    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
-    && chmod -R +rx /usr/share/julia/ \
-    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+
 
 RUN pip install scipy \
     numpy \
@@ -157,6 +158,10 @@ RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "install.packages('matchingR', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('rJava',,'http://rforge.net')"
 RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
 RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DataDrivenDiffEq")' \
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
     && chmod -R +rx /usr/share/julia/ \
@@ -169,6 +174,14 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
     && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
     && chmod -R +rx /usr/share/julia/ \
     && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Plots")' \
+    && cp -r /root/.local/share/jupyter/kernels/julia-* /usr/local/share/jupyter/kernels/ \
+    && chmod -R +rx /usr/share/julia/ \
+    && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
+
+RUN pip install diffeqpy
+ADD cmdscripts.py /
+CMD["python3", "./cmdscripts.py"]
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
