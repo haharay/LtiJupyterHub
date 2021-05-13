@@ -188,6 +188,7 @@ RUN pip install cryptography \
     rsa \
     pycryptodomex \
     matching
+RUN pip install PyCaret
 
 RUN pip install  nbgitpuller \
     tornado
