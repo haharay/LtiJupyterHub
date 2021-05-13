@@ -135,6 +135,7 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     wordcloud \
+    matching \
     pyqlib
 
 # 计量结果导出
@@ -163,8 +164,7 @@ RUN python3 -c "import diffeqpy;diffeqpy.install()"
 RUN pip install cryptography \
     pynacl \
     rsa \
-    pycryptodomex \
-    matching
+    pycryptodomex
 
 RUN pip install  nbgitpuller \
     tornado
