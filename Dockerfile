@@ -180,8 +180,7 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
     && chmod -R +rx /usr/local/share/jupyter/kernels/julia-*/
 
 RUN pip install diffeqpy
-ADD cmdscripts.py /
-CMD["python3", "./cmdscripts.py"]
+RUN python3 -c "import diffeqpy;diffeqpy.install()"
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
