@@ -73,8 +73,8 @@ RUN R -e "install.packages('IRkernel', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "IRkernel::installspec(user = FALSE)"
 
 
-ENV JULIA_VER_MAJ 1.5
-ENV JULIA_VER_MIN .4
+ENV JULIA_VER_MAJ 1.6
+ENV JULIA_VER_MIN .1
 ENV JULIA_VER $JULIA_VER_MAJ$JULIA_VER_MIN
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$JULIA_VER-linux-x86_64.tar.gz \
         && mkdir /usr/local/julia \
@@ -130,11 +130,6 @@ RUN pip install mobilechelonian \
     ipythontutor \
     pytutor
 
-# 机器学习简化包，很好用
-RUN pip install pycaret \
-    pyspark \
-    jupyter-book
-
 # 计量经济分析包
 RUN pip install statsmodels \
     linearmodels \
@@ -152,6 +147,10 @@ RUN pip install statsmodels \
 # 计量结果导出
 RUN pip install git+https://github.com/mwburke/stargazer.git
 
+# 机器学习简化包，很好用
+RUN pip install pycaret \
+    pyspark \
+    jupyter-book
 
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
@@ -188,7 +187,6 @@ RUN pip install cryptography \
     rsa \
     pycryptodomex \
     matching
-RUN pip install PyCaret
 
 RUN pip install  nbgitpuller \
     tornado
