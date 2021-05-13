@@ -139,9 +139,9 @@ RUN pip install statsmodels \
 RUN pip install git+https://github.com/mwburke/stargazer.git
 
 # 机器学习简化包，很好用
-RUN pip install pycaret \
-    pyspark \
-    jupyter-book
+RUN pip install pycaret
+RUN pip install pyspark
+RUN pip install jupyter-book
 
 
 #  install R packages
