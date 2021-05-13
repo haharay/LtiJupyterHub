@@ -129,8 +129,6 @@ RUN pip install statsmodels \
     arch \
     factor_analyzer \
     tushare \
-    julia \
-    diffeqpy \
     jitcode \
     jitcsde \
     cufflinks \
