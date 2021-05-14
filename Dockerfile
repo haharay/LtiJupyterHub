@@ -163,12 +163,12 @@ RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn
 
 RUN pip install diffeqpy
 RUN python3 -c "import diffeqpy;diffeqpy.install()"
-RUN python3 -c 'from julia import Pkg;Pkg.add("IJulia")'
-RUN python3 -c 'from julia import Pkg;Pkg.add("PyCall")'
-RUN python3 -c 'from julia import Pkg;Pkg.add("Miletus")'
-RUN python3 -c 'from julia import Pkg;Pkg.add("DataDrivenDiffEq")'
-RUN python3 -c 'from julia import Pkg;Pkg.add("DiffEqFlux")'
-RUN python3 -c 'from julia import Pkg;Pkg.add("Plots")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("IJulia")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("PyCall")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("Miletus")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("DataDrivenDiffEq")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("DiffEqFlux")'
+#RUN python3 -c 'from julia import Pkg;Pkg.add("Plots")'
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \

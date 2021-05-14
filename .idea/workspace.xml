@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="回到1.2.2">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="auth?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyterhub_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyterhub_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="11906000" />
+      <workItem from="1620947504320" duration="16091000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -228,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620962728976</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="auth?">
+      <created>1620967983645</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1620967983645</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +265,7 @@
     <MESSAGE value="安装python3-dev?" />
     <MESSAGE value="diffeqpy 找不到module？" />
     <MESSAGE value="回到1.2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="回到1.2.2" />
+    <MESSAGE value="auth?" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth?" />
   </component>
 </project>
