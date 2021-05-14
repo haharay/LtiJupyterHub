@@ -162,14 +162,7 @@ RUN R -e "install.packages('rJava',,'http://rforge.net')"
 RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 
 RUN pip install diffeqpy
-RUN python3 -c "import diffeqpy;diffeqpy.install()"
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("IJulia")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("PyCall")'
-#RUN python3 -c 'from julia import Pkg;Pkg.add("Miletus")'
-#RUN python3 -c 'from julia import Pkg;Pkg.add("DataDrivenDiffEq")'
-#RUN python3 -c 'from julia import Pkg;Pkg.add("DiffEqFlux")'
-#RUN python3 -c 'from julia import Pkg;Pkg.add("Plots")'
+#RUN python3 -c "import diffeqpy;diffeqpy.install()"
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \
