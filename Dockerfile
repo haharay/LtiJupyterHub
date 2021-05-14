@@ -163,7 +163,9 @@ RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn
 
 RUN pip install diffeqpy
 RUN python3 -c "import diffeqpy;diffeqpy.install()"
-#RUN python3 -c 'from julia import Pkg;Pkg.add("IJulia")'
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("IJulia")'
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")'
+RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("PyCall")'
 #RUN python3 -c 'from julia import Pkg;Pkg.add("PyCall")'
 #RUN python3 -c 'from julia import Pkg;Pkg.add("Miletus")'
 #RUN python3 -c 'from julia import Pkg;Pkg.add("DataDrivenDiffEq")'
