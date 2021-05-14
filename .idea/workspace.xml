@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="diffeqpy 找不到module？">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="回到1.2.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmdscripts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyterhub_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyterhub_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="11061000" />
+      <workItem from="1620947504320" duration="11906000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -222,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620953142292</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="回到1.2.2">
+      <created>1620962728976</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1620962728976</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +259,7 @@
     <MESSAGE value="bottleneck 从git下载文件安装。" />
     <MESSAGE value="安装python3-dev?" />
     <MESSAGE value="diffeqpy 找不到module？" />
-    <option name="LAST_COMMIT_MESSAGE" value="diffeqpy 找不到module？" />
+    <MESSAGE value="回到1.2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="回到1.2.2" />
   </component>
 </project>

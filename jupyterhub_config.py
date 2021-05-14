@@ -26,7 +26,7 @@ from jupyterhub.auth import LocalAuthenticator
 class LocalLtiAuthenticator(LocalAuthenticator, LTIAuthenticator):
     pass
 c.JupyterHub.authenticator_class = 'ltiauthenticator.LTIAuthenticator'
-c.JupyterHub.authenticator_class = LocalLtiAuthenticator
+#c.JupyterHub.authenticator_class = LocalLtiAuthenticator
 c.LTIAuthenticator.consumers = {
     "6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6":"795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 }
