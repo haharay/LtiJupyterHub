@@ -146,15 +146,6 @@ RUN pip install statsmodels \
 # 计量结果导出
 RUN pip install git+https://github.com/mwburke/stargazer.git
 
-######################
-# 机器学习简化包，很好用，每个都很大，容易错。
-RUN pip install bottleneck
-RUN pip install pycaret
-RUN pip install pyspark
-RUN pip install jupyter-book
-#RUN pip install pyqlib
-
-
 #  install R packages
 RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('matchingR', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
@@ -174,6 +165,14 @@ RUN pip install  nbgitpuller \
     tornado
 
 RUN pip install  -U  nbconvert[webpdf]
+
+######################
+# 机器学习简化包，很好用，每个都很大，容易错。
+RUN pip install bottleneck
+RUN pip install pyspark
+RUN pip install jupyter-book
+RUN pip install -U pycaret
+#RUN pip install pyqlib
 
 RUN pip install jupyterhub-ltiauthenticator
 

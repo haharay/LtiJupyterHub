@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="貌似无法安装julia的包，还是单个安装。">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,8 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="20260000" />
+      <workItem from="1620947504320" duration="20709000" />
+      <workItem from="1620999259600" duration="418000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -268,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620997375412</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。">
+      <created>1620998551639</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1620998551639</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +313,7 @@
     <MESSAGE value="PKg安装 ？" />
     <MESSAGE value="恢复老的Julia的包 的安装方式。" />
     <MESSAGE value="貌似无法安装julia的包，还是单个安装。" />
-    <option name="LAST_COMMIT_MESSAGE" value="貌似无法安装julia的包，还是单个安装。" />
+    <MESSAGE value="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。" />
+    <option name="LAST_COMMIT_MESSAGE" value="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。" />
   </component>
 </project>
