@@ -104,4 +104,3 @@ docker start jupyterhub
 https://github.com/jupyter/docker-stacks
 https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
 
-sudo curl -L "https://github.com/overhangio/tutor/releases/download/v10.5.2/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor

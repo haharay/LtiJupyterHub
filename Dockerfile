@@ -181,6 +181,6 @@ RUN pip install  nbgitpuller \
 
 RUN pip install  -U  nbconvert[webpdf]
 
-RUN pip install git+https://github.com/jupyterhub/ltiauthenticator
+RUN pip install jupyterhub-ltiauthenticator
 
 EXPOSE 8000
