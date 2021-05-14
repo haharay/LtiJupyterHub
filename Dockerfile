@@ -162,7 +162,7 @@ RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using P
 RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Plots")' \
 
 RUN pip install diffeqpy
-RUN python3 -c "import diffeqpy;diffeqpy.install()"
+RUN python3 -e "import diffeqpy;diffeqpy.install()"
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \

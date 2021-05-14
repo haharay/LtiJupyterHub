@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="bottleneck 从git下载文件安装。">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="安装python3-dev?">
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +42,7 @@
       <workItem from="1620717488674" duration="1088000" />
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
-      <workItem from="1620947504320" duration="3681000" />
+      <workItem from="1620947504320" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -199,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620950865542</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="安装python3-dev?">
+      <created>1620951308380</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620951308380</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +234,7 @@
     <MESSAGE value="去掉pyqlib，安装问题。5" />
     <MESSAGE value="bottleneck errors" />
     <MESSAGE value="bottleneck 从git下载文件安装。" />
-    <option name="LAST_COMMIT_MESSAGE" value="bottleneck 从git下载文件安装。" />
+    <MESSAGE value="安装python3-dev?" />
+    <option name="LAST_COMMIT_MESSAGE" value="安装python3-dev?" />
   </component>
 </project>
