@@ -140,7 +140,10 @@ RUN pip install git+https://github.com/mwburke/stargazer.git
 
 ######################
 # 机器学习简化包，很好用，每个都很大，容易错。
-RUN pip install git+https://github.com/pydata/bottleneck.git
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    python3-dev
+RUN pip install bottleneck
+#RUN pip install git+https://github.com/pydata/bottleneck.git
 RUN pip install pycaret
 RUN pip install pyspark
 RUN pip install jupyter-book
