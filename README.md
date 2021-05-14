@@ -91,7 +91,7 @@ docker volume create jupyterhub_data
 ```bash
 docker run -it --name jupyterhub -p 8599:8000 -v jupyterhub_data:/home jupyter_lti
 ```
-重新打开、stop命名容器：
+断电后，重新打开、stop命名容器：
 ```bash
 docker start -i jupyterhub
 docker start jupyterhub

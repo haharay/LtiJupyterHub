@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。">
+    <list default="true" id="a2c5e449-a9f3-4a3c-b943-bca22ef4a5e1" name="Default Changelist" comment="PyCaret放在最后，貌似numpy等版本要求较高。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,8 @@
       <workItem from="1620897951441" duration="784000" />
       <workItem from="1620912867848" duration="3231000" />
       <workItem from="1620947504320" duration="20709000" />
-      <workItem from="1620999259600" duration="418000" />
+      <workItem from="1620999259600" duration="1248000" />
+      <workItem from="1621001304586" duration="112000" />
     </task>
     <task id="LOCAL-00001" summary="stargazer用于线性回归结果导出。">
       <created>1620717863014</created>
@@ -277,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620998551639</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="PyCaret放在最后，貌似numpy等版本要求较高。">
+      <created>1621000031263</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1621000031264</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +322,7 @@
     <MESSAGE value="恢复老的Julia的包 的安装方式。" />
     <MESSAGE value="貌似无法安装julia的包，还是单个安装。" />
     <MESSAGE value="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。" />
-    <option name="LAST_COMMIT_MESSAGE" value="告一段落，先运行再说吧，Julia目前仅自己使用，那就手动安装吧。" />
+    <MESSAGE value="PyCaret放在最后，貌似numpy等版本要求较高。" />
+    <option name="LAST_COMMIT_MESSAGE" value="PyCaret放在最后，貌似numpy等版本要求较高。" />
   </component>
 </project>
