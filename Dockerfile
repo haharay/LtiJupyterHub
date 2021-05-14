@@ -1,4 +1,4 @@
-FROM jupyterhub/jupyterhub
+FROM jupyterhub/jupyterhub:1.2.2
 
 LABEL maintainer="Ray <hechunming@qq.com>"
 
@@ -7,6 +7,7 @@ USER root
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         python3-pip \
         python3-tk  \
+        python3-dev  \
         wget \
     	git
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -40,6 +41,14 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         default-jdk \
         fonts-noto-cjk \
  && rm -rf /var/lib/apt/lists/*
+
+# install for GR.jl, Plots.jl
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    libxt6 \
+    libxrender1 \
+    libxext6 \
+    libgl1-mesa-glx \
+    libqt5widgets5
 
 RUN echo "zh_CN.UTF-8 UTF-8" > /etc/locale.gen \
     && dpkg-reconfigure --frontend=noninteractive locales \
@@ -84,8 +93,7 @@ RUN wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_VER_MAJ/julia-$
 ENV JULIA_PKGDIR /usr/share/julia/packages
 # install IJulia
 ENV JUPYTER=/usr/local/bin/jupyter
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("PyCall")' \
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("IJulia")' \
+
 
 RUN pip install scipy \
     numpy \
@@ -140,10 +148,7 @@ RUN pip install git+https://github.com/mwburke/stargazer.git
 
 ######################
 # 机器学习简化包，很好用，每个都很大，容易错。
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-    python3-dev
 RUN pip install bottleneck
-#RUN pip install git+https://github.com/pydata/bottleneck.git
 RUN pip install pycaret
 RUN pip install pyspark
 RUN pip install jupyter-book
@@ -155,14 +160,15 @@ RUN R -e "install.packages('magrittr', repos = 'https://mirror.lzu.edu.cn/CRAN/'
 RUN R -e "install.packages('matchingR', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
 RUN R -e "install.packages('rJava',,'http://rforge.net')"
 RUN R -e "install.packages('matchingMarkets', repos = 'https://mirror.lzu.edu.cn/CRAN/')"
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Miletus")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DataDrivenDiffEq")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DifferentialEquations")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("DiffEqFlux")'
-RUN julia -e 'empty!(DEPOT_PATH); push!(DEPOT_PATH, "/usr/share/julia"); using Pkg; Pkg.add("Plots")'
 
 RUN pip install diffeqpy
 RUN python3 -c "import diffeqpy;diffeqpy.install()"
+RUN python3 -c 'from julia import Pkg;Pkg.add("IJulia")'
+RUN python3 -c 'from julia import Pkg;Pkg.add("PyCall")'
+RUN python3 -c 'from julia import Pkg;Pkg.add("Miletus")'
+RUN python3 -c 'from julia import Pkg;Pkg.add("DataDrivenDiffEq")'
+RUN python3 -c 'from julia import Pkg;Pkg.add("DiffEqFlux")'
+RUN python3 -c 'from julia import Pkg;Pkg.add("Plots")'
 
 # 加密与信息安全相关工具，解密hashcat\john\pdfcrack在命令行。
 RUN pip install cryptography \

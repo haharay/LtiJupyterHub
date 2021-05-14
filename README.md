@@ -11,7 +11,7 @@
 安装步骤如下：
 1. 收集制作Docker映像所需的材料
 ```console
-git clone https://github.com/haharay/LtiJupyterhub.git
+git clone https://github.com/haharay/LtiJupyterHub.git
 ```
 2. 在主机上安装docker。 在Linux中，只需键入
 ```console
@@ -51,6 +51,8 @@ ps -ef | grep wyc_linux_64
 "jupyter:6961493c23b9cacc68fc5c6953751035548f7fbc8805c5bcbd4fff39f1076ea6:795761095d71c2191786eda422eaecdb4af430145c717c567dc282c4f7702698"
 
 然后，使用高级模块添加LTI组件或者是构造课件组件。
+网址：http://10.8.116.47:8599/
+    http://10.8.116.47:8599/hub/lti
 
 ## 有关地址
 由于Jupyterhub中 get_next_url返回的地址中包含/hub/home，因此在LTI接口文件中，在__init__函数中把next_url中的后五个字符去掉，即可正常切换网址。
@@ -92,6 +94,7 @@ docker run -it --name jupyterhub -p 8599:8000 -v jupyterhub_data:/home jupyter_l
 重新打开、stop命名容器：
 ```bash
 docker start -i jupyterhub
+docker start jupyterhub
 ```
 ### 备份与恢复数据
 
