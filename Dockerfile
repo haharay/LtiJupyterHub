@@ -66,6 +66,16 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install notebook
 
+# 安装ta-lib技术分析库
+RUN pip install numpy
+RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz && \  
+    tar -xvzf ta-lib-0.4.0-src.tar.gz && \  
+    cd ta-lib/ && \  ./configure --prefix=/usr && \
+    make && \
+    make install 
+RUN rm -R ta-lib ta-lib-0.4.0-src.tar.gz
+RUN pip install ta-lib
+
 
 ARG R_VERSION=4.0.5
 ARG OS_IDENTIFIER=ubuntu-2004
@@ -141,7 +151,8 @@ RUN pip install statsmodels \
     jitcsde \
     cufflinks \
     wordcloud \
-    matching
+    matching  \
+    backtrader
 
 # 计量结果导出
 RUN pip install git+https://github.com/mwburke/stargazer.git
